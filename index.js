@@ -11,7 +11,7 @@ app.use(express.json())
 app.get("/figurinhas", controller.findAllFigurinhasController)
 app.get("/figurinhas/figurinha/:id", controller.findFigurinhaByIDController)
 app.post("/figurinhas/figurinha/create", controller.createFigurinhaController)
-app.put("/figurinhas/figurinha/update/:id", controller.updateFigurinhaController)
+app.put("/figurinhas/figurinha/update", controller.updateFigurinhaController)
 app.delete("/figurinhas/figurinha/delete/:id", controller.deleteFigurinhaController)
 
 app.listen(3000, () => {

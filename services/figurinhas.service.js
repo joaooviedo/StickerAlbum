@@ -59,7 +59,7 @@ function updateFigurinhaService(figurinha) {
   };
 
   figurinhas.map((eachFigurinha, index) => {
-    if (eachFigurinha.id === updateFigurinha) {
+    if (eachFigurinha.id === updateFigurinha.id) {
       figurinhas.splice(index, 1, updateFigurinha);
     }
   });
