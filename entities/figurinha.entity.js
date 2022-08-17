@@ -1,13 +1,14 @@
 const crypto = require("crypto");
+const figurinhas = require("../mocks/figurinhas");
 
 class FigurinhaEntity {
-  constructor(carrer) {
-    this.id = crypto.randomUUID();
-    this.name = carrer.name;
-    this.country = carrer.country;
-    this.position = carrer.position;
-    this.number = carrer.number;
-    this.age = carrer.age;
+  constructor(figurinha) {
+    this.id = figurinha.id ?? crypto.randomUUID();
+    this.name = figurinha.name;
+    this.country = figurinha.country;
+    this.position = figurinha.position;
+    this.number = figurinha.number;
+    this.age = figurinha.age;
   }
   validate() {
     if (!this.name) {

@@ -2,7 +2,7 @@ const crypto = require("crypto");
 
 class CarrerEntity {
   constructor(carrer) {
-    this.id = crypto.randomUUID();
+    this.id = carrer.id ?? crypto.randomUUID();
     this.originTeam = carrer.originTeam;
     this.actualTeam = carrer.actualTeam;
     this.goals = carrer.goals;

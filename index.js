@@ -1,7 +1,9 @@
 const express = require("express");
-const cors = require("cors");
-const Carrer = require("./entities/carrer.entity");
 const app = express();
+
+const cors = require("cors");
+
+const Carrer = require("./entities/carrer.entity");
 const port = 3000;
 
 let figurinhas = require("./mocks/figurinhas");
