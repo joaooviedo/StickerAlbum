@@ -1,20 +1,19 @@
 const express = require("express");
-const app = express();
-
 const cors = require("cors");
 
-const Carrer = require("./entities/carrer.entity");
-const port = 3000;
+const app = express();
 
-let figurinhas = require("./mocks/figurinhas");
+const controller = require("./controllers/figurinhas.controller")
 
-app.get("/", (req, res) => {
-  res.send(figurinhas);
-});
+app.use(cors());
+app.use(express.json())
 
-app.get("/figurinha/:id", function (req, res) {
-});
+app.get("/figurinhas", controller.findAllFigurinhasController)
+app.get("/figurinhas/figurinha/:id", controller.findFigurinhaByIDController)
+app.post("/figurinhas/figurinha/create", controller.createFigurinhaController)
+app.put("/figurinhas/figurinha/update/:id", controller.updateFigurinhaController)
+app.delete("/figurinhas/figurinha/delete/:id", controller.deleteFigurinhaController)
 
-app.listen(port, () => {
-  console.log(`Rodando na porta: ${port}`);
-});
+app.listen(3000, () => {
+  console.log("http://localhost:3000")
+})

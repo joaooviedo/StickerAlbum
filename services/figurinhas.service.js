@@ -15,7 +15,7 @@ function findFigurinhaByIDService(id) {
       figurinhaFinded = figurinha;
     }
   });
-  return figurinhaId;
+  return figurinhaFinded;
 }
 
 //Criar Figurinha
